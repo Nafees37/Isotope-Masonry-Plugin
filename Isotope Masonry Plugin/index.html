@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Isotope Masonry Plugin</title>
+ <link rel="stylesheet" href="css/bootstrap.min.css">
+ <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+ 
+<div class="container">
+ <div class="row">
+  <div class="portfolio">
+   <ul>
+    <li data-filter="*">All</li>
+    <li data-filter=".web_design">Web Design</li>
+    <li data-filter=".web_development">Web Development</li>
+    <li data-filter=".seo">SEO</li>
+    <li data-filter=".wordpress">Wordpress</li>
+   </ul>
+  </div>
+  <div class="portfolio_items">
+    <div class="item web_development">
+     <img src="images/1.jpg" alt="">
+    </div>
+    <div class="item web_development">
+     <img src="images/2.jpg" alt="">
+    </div>
+    <div class="item web_development">
+     <img src="images/3.jpg" alt="">
+    </div>
+    <div class="item web_development wordpress">
+     <img src="images/6.jpg" alt="">
+    </div>
+    <div class="item seo wordpress ">
+     <img src="images/image_1.jpg" alt="">
+    </div>
+    <div class="item seo">
+     <img src="images/image_2.jpg" alt="">
+    </div>
+    <div class="item seo">
+     <img src="images/image_3.jpg" alt="">
+    </div>
+    <div class="item web_design">
+     <img src="images/image_4.jpg" alt="">
+    </div>
+    <div class="item seo">
+     <img src="images/6.jpg" alt="">
+    </div>
+    <div class="item seo">
+     <img src="images/2.jpg" alt="">
+    </div>
+    <div class="item web_design">
+     <img src="images/image_2.jpg" alt="">
+    </div>
+    <div class="item web_design seo">
+     <img src="images/image_1.jpg" alt="">
+    </div>
+  </div>
+ </div>
+</div>
+
+ <script src="js/jquery-3.6.0.min.js"></script>
+ <script src="js/isotope.pkgd.min.js"></script>
+ <script>
+      // init Isotope
+    var $grid = $('.portfolio_items').isotope({
+      // options
+    });
+    // filter items on button click
+    $('.portfolio').on( 'click', 'li', function() {
+      var filterValue = $(this).attr('data-filter');
+      $grid.isotope({ filter: filterValue });
+    });
+ </script>
+</body>
+</html>
